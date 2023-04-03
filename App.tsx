@@ -1,12 +1,27 @@
+import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet,  View } from 'react-native';
+import { useEffect } from 'react';
+import * as Updates from 'expo-updates'
+import Router from './src';
+
 
 export default function App() {
+  useEffect(() => {
+    async function updateApp() {
+      const { isAvailable } = await Updates.checkForUpdateAsync();
+      if (isAvailable) {
+        await Updates.fetchUpdateAsync();
+        await Updates.reloadAsync(); 
+      }
+    }
+    // updateApp();
+  }, []);
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    // <View style={styles.container}>
+      <Router/>
+    //   <StatusBar style="auto" />
+    // </View>
   );
 }
 

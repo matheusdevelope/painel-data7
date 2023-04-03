@@ -1,9 +1,8 @@
 {
   "expo": {
-    "name": "painel-data7",
+    "name": "Painel Data7",
     "slug": "painel-data7",
     "version": "1.0.0",
-    "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
@@ -21,10 +20,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.matheus_develope.paineldata7"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "eebc4b84-4e31-4757-ac79-8336fe2fb225"
+      }
     }
   }
 }
