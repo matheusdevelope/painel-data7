@@ -30,6 +30,20 @@
       "eas": {
         "projectId": "eebc4b84-4e31-4757-ac79-8336fe2fb225"
       }
+    },
+    "plugins": [
+      [
+        "./plugins/withTvBanner",
+        {
+          "image": "./assets/tv_banner.png"
+        }
+      ]
+    ],
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/eebc4b84-4e31-4757-ac79-8336fe2fb225"
     }
   }
 }

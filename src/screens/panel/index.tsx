@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useState, useEffect } from "react";
 import { View, Text, ActivityIndicator, Alert } from "react-native";
 import WebView from "react-native-webview";
@@ -34,6 +35,12 @@ export default function PanelScreen({ route, navigation }: IPanelProps) {
     );
 
   if (pageStatus >= 200 && pageStatus < 300) {
+    try {
+      AsyncStorage.setItem("@host_address", url);
+    } catch (error) {
+      Alert.alert('Atenção', 'Falha ao salvar o endereço do servidor.')
+    }
+    
     return <WebView source={{ uri: url }} />;
   }
   
