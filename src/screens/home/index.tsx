@@ -42,7 +42,7 @@ export default function HomeScreen({ navigation }: IHomeProps) {
     <View style={styles.container}>
       <Text style={styles.title}>Painel de Expedição</Text>
       <View style={styles.form}>
-        <Text style={styles.label}>Endereço do Servidor:</Text>
+        <Text style={styles.label}>Endereço Servidor:</Text>
         <TextInput
         ref={InputRef}
           style={styles.input}

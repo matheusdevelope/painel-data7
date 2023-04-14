@@ -2,6 +2,8 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useState, useEffect } from "react";
 import { View, Text, ActivityIndicator, Alert } from "react-native";
 import WebView from "react-native-webview";
+
+import { activateKeepAwakeAsync , deactivateKeepAwake } from 'expo-keep-awake';
 export default function PanelScreen({ route, navigation }: IPanelProps) {
   const [loading, setLoading] = useState(true);
   const [pageStatus, setPageStatus] = useState(0);
@@ -24,7 +26,12 @@ export default function PanelScreen({ route, navigation }: IPanelProps) {
 
   useEffect(() => {
     getPageStatus();
+    activateKeepAwakeAsync("data7");
+    return()=>{
+      deactivateKeepAwake('data7');
+    }
   }, []);
+
 
   if (loading)
     return (

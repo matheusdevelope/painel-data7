@@ -5,7 +5,8 @@ import Router from './src';
 
 export default function App() {
   useEffect(() => {
-    async function updateApp() {
+    
+    try{async function updateApp() {
       const { isAvailable } = await Updates.checkForUpdateAsync();
       if (isAvailable) {
         await Updates.fetchUpdateAsync();
@@ -13,6 +14,10 @@ export default function App() {
       }
     }
      updateApp();
+  }catch(e){
+    
+  }
+
   }, []);
   return (
       <Router/>
